@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pprovazn <pprovazn@student.42prague.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 20:10:15 by pprovazn          #+#    #+#             */
-/*   Updated: 2025/09/29 20:38:46 by pprovazn         ###   ########.fr       */
+/*   Created: 2025/10/10 12:39:46 by pprovazn          #+#    #+#             */
+/*   Updated: 2025/10/13 16:52:31 by pprovazn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
+#include <stdio.h>
 
-void	ft_swap(int *a, int *b)
+void	ft_putstr(char *str)
 {
-	int	swap;
+	int	a;
 
-	swap = 0;
-	swap = *a;
-	*a = *b;
-	*b = swap;
+	a = 0;
+	while (str[a] != '\0')
+	{
+		write (1, &str[a], 1);
+		a++;
+	}
 }
 
 /*
-int	main (void)
+int	main(void)
 {
-	int value1 = 24;
-	int value2 = 42;
+	char test[] = "Ahoj, jak se mas.";
 
-	ft_swap(&value1, &value2);
+	ft_putstr(test);
 
-	printf("value 1: %d\nvalue 2: %d\n", value1, value2);
-	return(0);
+	return (0);
 }
-*/
-
-/*
-Create a function that swaps the values of two integers
-using their addresses received as parameters.
 */

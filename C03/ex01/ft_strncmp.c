@@ -1,33 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pprovazn <pprovazn@student.42prague.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 19:53:54 by pprovazn          #+#    #+#             */
-/*   Updated: 2025/10/03 18:27:00 by pprovazn         ###   ########.fr       */
+/*   Created: 2025/10/08 05:28:36 by pprovazn          #+#    #+#             */
+/*   Updated: 2025/10/08 08:27:32 by pprovazn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
+#include <string.h>
 
-void	ft_ft(int *nbr)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	*nbr = 42;
+	unsigned int	i;
+
+	i = 0;
+	if (n == 0)
+	{
+		return (0);
+	}
+	while ((s1[i] != '\0') && (s2[i] != '\0') && (s1[i] == s2[i])
+		&& (i < n - 1))
+	{
+		i++;
+	}
+	if (s1[i] == s2[i])
+	{
+		return (0);
+	}
+	else
+	{
+		return (s1[i] - s2[i]);
+	}
 }
 
 /*
 int	main(void)
 {
-    int x = 0;         // start with some value
+	int n = 3;
 
-    ft_ft(&x);         // pass the address of x
+	char test[] = "hhhaa";
+	char test1[] = "hhaaa";
 
-    printf("%p\n%d\n", &x, x);
+	printf("Result:%d\n", ft_strncmp(test, test1, n));
 
-// &x si an address, x is a value on that address and should now be 42
-
+	return (0);
 }
 */

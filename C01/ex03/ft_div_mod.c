@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pprovazn <pprovazn@student.42prague.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/29 20:40:29 by pprovazn          #+#    #+#             */
+/*   Updated: 2025/09/29 20:41:35 by pprovazn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <unistd.h>
 
@@ -26,5 +38,7 @@ int	main (void)
 */
 
 /*
-This function divides ‘a’ by ‘b’ and stores the result in the integer pointed to by ‘div’. It also stores the remainder of the division of ‘a’ by ‘b’ in the integer pointed to by ‘mod’.
+This function divides ‘a’ by ‘b’ and stores the result
+in the integer pointed to by ‘div’. It also stores the remainder
+of the division of ‘a’ by ‘b’ in the integer pointed to by ‘mod’.
 */

@@ -1,42 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pprovazn <pprovazn@student.42prague.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 20:10:15 by pprovazn          #+#    #+#             */
-/*   Updated: 2025/09/29 20:38:46 by pprovazn         ###   ########.fr       */
+/*   Created: 2025/09/30 05:50:23 by pprovazn          #+#    #+#             */
+/*   Updated: 2025/10/07 20:53:59 by pprovazn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
+#include <stdio.h>
 
-void	ft_swap(int *a, int *b)
+char	*ft_strcpy(char *dest, char *src)
 {
-	int	swap;
+	char	*a;
 
-	swap = 0;
-	swap = *a;
-	*a = *b;
-	*b = swap;
+	a = dest;
+	while (*src != '\0')
+	{
+		*dest = *src;
+		dest++;
+		src++;
+	}
+	*dest = '\0';
+	return (a);
 }
 
 /*
-int	main (void)
+int	main(void)
 {
-	int value1 = 24;
-	int value2 = 42;
+	char src[] = "Buenos dias!";
+	char dest[100];
 
-	ft_swap(&value1, &value2);
+	ft_strcpy(dest, src);
 
-	printf("value 1: %d\nvalue 2: %d\n", value1, value2);
+	printf("First string %s\n", src);
+	printf("Second string %s\n", dest);
+
 	return(0);
 }
-*/
-
-/*
-Create a function that swaps the values of two integers
-using their addresses received as parameters.
 */

@@ -1,14 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pprovazn <pprovazn@student.42prague.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/29 17:36:50 by pprovazn          #+#    #+#             */
+/*   Updated: 2025/10/03 11:34:15 by pprovazn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void	ft_putcharTEST(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
-
-/*
-int	main(void)
-{
-	ft_putcharTEST('u');
-	return(0);
-}
-*/

@@ -1,11 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pprovazn <pprovazn@student.42prague.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/29 20:43:17 by pprovazn          #+#    #+#             */
+/*   Updated: 2025/09/29 20:46:44 by pprovazn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdio.h>
 
-void 	ft_ultimate_div_mod(int *a, int *b)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	int div = *a / *b;
-	int mod = *a % *b;
+	int	div;
+	int	mod;
 
+	div = *a / *b;
+	mod = *a % *b;
 	*a = div;
 	*b = mod;
 }
@@ -24,5 +38,8 @@ int	main(void)
 */
 
 /*
-This function divides the value pointed to by ‘a’ by the value pointed to by ‘b’. The result of the division is stored in the integer pointed to by ‘a’, while the remainder is stored in the integer pointed to by ‘b’.
+This function divides the value pointed to by ‘a’
+by the value pointed to by ‘b’. The result of the division
+is stored in the integer pointed to by ‘a’, while the remainder
+is stored in the integer pointed to by ‘b’.
 */

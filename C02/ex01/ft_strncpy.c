@@ -1,33 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pprovazn <pprovazn@student.42prague.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 19:53:54 by pprovazn          #+#    #+#             */
-/*   Updated: 2025/10/03 18:27:00 by pprovazn         ###   ########.fr       */
+/*   Created: 2025/09/30 06:36:07 by pprovazn          #+#    #+#             */
+/*   Updated: 2025/10/09 05:12:23 by pprovazn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
-void	ft_ft(int *nbr)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	*nbr = 42;
+	unsigned int	i;
+
+	i = 0;
+	while (src [i] != '\0' && i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }
 
 /*
-int	main(void)
+int     main(void)
 {
-    int x = 0;         // start with some value
+        char src[] = "Hasta manana";
+        char dest[100];
 
-    ft_ft(&x);         // pass the address of x
+        unsigned int n = 8;
 
-    printf("%p\n%d\n", &x, x);
+        ft_strncpy(dest, src, n);
 
-// &x si an address, x is a value on that address and should now be 42
+        printf("Original: %s\n", src);
+        printf("Copied: %s\n", dest);
 
+        return(0);
 }
 */

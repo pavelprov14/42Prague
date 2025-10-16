@@ -1,33 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pprovazn <pprovazn@student.42prague.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 19:53:54 by pprovazn          #+#    #+#             */
-/*   Updated: 2025/10/03 18:27:00 by pprovazn         ###   ########.fr       */
+/*   Created: 2025/10/03 05:58:32 by pprovazn          #+#    #+#             */
+/*   Updated: 2025/10/07 18:47:41 by pprovazn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
-void	ft_ft(int *nbr)
+int	ft_str_is_lowercase(char *str)
 {
-	*nbr = 42;
+	while (*str != '\0')
+	{
+		if (!(*str >= 'a') && (*str <= 'z'))
+		{
+			return (0);
+		}
+		str++;
+	}
+	return (1);
 }
 
 /*
 int	main(void)
 {
-    int x = 0;         // start with some value
+	char test[] = "sfdasfppwemg";
 
-    ft_ft(&x);         // pass the address of x
+	char test1[] = "54515";
 
-    printf("%p\n%d\n", &x, x);
+	char test2[] = "sfdsaf ";
 
-// &x si an address, x is a value on that address and should now be 42
+	printf("Should be 1: %d\n", ft_str_is_lowercase(test));
+	printf("Should be 0: %d\n", ft_str_is_lowercase(test1));
+	printf("Should be 0: %d\n", ft_str_is_lowercase(test2));
 
+	return (0);
 }
 */

@@ -1,33 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pprovazn <pprovazn@student.42prague.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 19:53:54 by pprovazn          #+#    #+#             */
-/*   Updated: 2025/10/03 18:27:00 by pprovazn         ###   ########.fr       */
+/*   Created: 2025/10/09 12:13:42 by pprovazn          #+#    #+#             */
+/*   Updated: 2025/10/09 12:24:22 by pprovazn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
-void	ft_ft(int *nbr)
+char	*ft_strupcase(char *str)
 {
-	*nbr = 42;
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+		{
+			str[i] = str[i] - 32;
+		}
+		i++;
+	}
+	return (str);
 }
 
 /*
 int	main(void)
 {
-    int x = 0;         // start with some value
+	char test[] = "testing my funciton";
+	char test1[] = "STJGWRk dLK 66";
 
-    ft_ft(&x);         // pass the address of x
+	printf("Original1: %s\n", test);
+	printf("Original1 all capital: %s\n", ft_strupcase(test));
+	printf("Original2: %s\n", test1);
+	printf("Original2 all capital: %s\n", ft_strupcase(test1));
 
-    printf("%p\n%d\n", &x, x);
-
-// &x si an address, x is a value on that address and should now be 42
-
+	return (0);
 }
 */

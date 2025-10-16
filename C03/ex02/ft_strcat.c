@@ -1,33 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pprovazn <pprovazn@student.42prague.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 19:53:54 by pprovazn          #+#    #+#             */
-/*   Updated: 2025/10/03 18:27:00 by pprovazn         ###   ########.fr       */
+/*   Created: 2025/10/09 05:26:33 by pprovazn          #+#    #+#             */
+/*   Updated: 2025/10/09 06:03:18 by pprovazn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
+#include <string.h>
 
-void	ft_ft(int *nbr)
+char	*ft_strcat(char *dest, char *src)
 {
-	*nbr = 42;
+	int	i;
+	int	p;
+
+	i = 0;
+	p = 0;
+	while (dest[i] != '\0')
+	{
+		i++;
+	}
+	while (src[p] != '\0')
+	{
+		dest[i] = src[p];
+		i++;
+		p++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
 
 /*
 int	main(void)
 {
-    int x = 0;         // start with some value
+	char dest[] = "Ahoj";
+	char src[] = ", jak se mas";
 
-    ft_ft(&x);         // pass the address of x
+	char dest2[] = "Ahoj";
 
-    printf("%p\n%d\n", &x, x);
+	printf("Result: %s\n", ft_strcat(dest, src));
 
-// &x si an address, x is a value on that address and should now be 42
+	printf("Restult of an actual function: %s\n", strcat(dest2, src));
 
+	return (0);
 }
 */

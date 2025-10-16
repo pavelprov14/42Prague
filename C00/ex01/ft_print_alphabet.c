@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pprovazn <pprovazn@student.42prague.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/29 17:45:07 by pprovazn          #+#    #+#             */
+/*   Updated: 2025/09/29 18:10:55 by pprovazn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_print_alphabet(void)
+void	ft_print_alphabet(void)
 {
-	char c;
-	
+	char	c;
+
 	c = 'a';
 	while (c <= 'z')
 	{

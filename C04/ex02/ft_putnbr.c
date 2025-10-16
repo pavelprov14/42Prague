@@ -1,33 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pprovazn <pprovazn@student.42prague.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 19:53:54 by pprovazn          #+#    #+#             */
-/*   Updated: 2025/10/03 18:27:00 by pprovazn         ###   ########.fr       */
+/*   Created: 2025/10/13 16:53:37 by pprovazn          #+#    #+#             */
+/*   Updated: 2025/10/14 05:38:33 by pprovazn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
-void	ft_ft(int *nbr)
+void	ft_putchar(char print)
 {
-	*nbr = 42;
+	write(1, &print, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
+	{
+		ft_putchar('-');
+		ft_putchar('2');
+		ft_putnbr(147483648);
+		return ;
+	}
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+	}
+	ft_putchar(nb % 10 + '0');
 }
 
 /*
 int	main(void)
 {
-    int x = 0;         // start with some value
+	printf("-2147483648\n");
+	ft_putnbr(-2147483648);
+	printf("\n");
+	ft_putnbr(65464);
+	printf("\n");
+	ft_putnbr(-48);
 
-    ft_ft(&x);         // pass the address of x
-
-    printf("%p\n%d\n", &x, x);
-
-// &x si an address, x is a value on that address and should now be 42
-
+	return (0);
 }
 */
